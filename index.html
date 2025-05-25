@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meu Bikefit - Video-based Bike Fitting by Partícula Unânime">
+  <title>Meu Bikefit | Partícula Unânime</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1523958203904-cdcb402031fd?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      color: #fff;
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 0.2em;
+    }
+
+    header p {
+      font-size: 1.2em;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel-container {
+      position: relative;
+      max-width: 900px;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: auto;
+    }
+
+    .carousel-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .carousel-buttons button {
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      font-size: 1.5em;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Meu Bikefit</h1>
+    <p>Video-based bike fitting by Partícula Unânime – Ride smarter, safer, and more efficiently</p>
+  </header>
+
+  <section>
+    <p style="text-align: center; max-width: 700px; margin: auto;">Meu Bikefit is an innovative project by <strong>Partícula Unânime</strong> that uses advanced video analysis to help cyclists achieve optimal riding posture. Whether you're a beginner or a pro, our remote bike fitting system delivers expert adjustments tailored to your body – all through video.</p>
+  </section>
+
+  <section class="benefits">
+    <h2>Benefits of a Proper Bike Fit</h2>
+    <ul>
+      <li>Maximized power and pedal efficiency</li>
+      <li>Enhanced comfort for long-distance rides</li>
+      <li>Reduced injury risk and pain prevention</li>
+      <li>Optimized posture and alignment</li>
+      <li>Performance tuning based on body geometry</li>
+    </ul>
+  </section>
+
+  <section class="how-it-works">
+    <h2>How It Works</h2>
+    <ul>
+      <li>Record a side-view video of yourself riding (indoors or outdoors)</li>
+      <li>Upload your video to our platform</li>
+      <li>We analyze your position using AI + cycling expertise</li>
+      <li>Receive a personalized fit report and visual suggestions</li>
+    </ul>
+  </section>
+
+  <section class="carousel-section">
+    <h2>Visual Analysis Examples</h2>
+    <div class="carousel-container">
+      <div class="carousel" id="carousel">
+        <img src="https://images.unsplash.com/photo-1602441950920-936b6efb57c6?auto=format&fit=crop&w=1350&q=80" alt="Bike Fit 1">
+        <img src="https://images.unsplash.com/photo-1594007654601-28d1cd98995f?auto=format&fit=crop&w=1350&q=80" alt="Bike Fit 2">
+        <img src="https://images.unsplash.com/photo-1589187155475-04c1c007b9e3?auto=format&fit=crop&w=1350&q=80" alt="Bike Fit 3">
+      </div>
+      <div class="carousel-buttons">
+        <button onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+        <button onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Partícula Unânime – All rights reserved</p>
+    <p>Built with ♥ and hosted on GitHub Pages</p>
+  </footer>
+
+  <script>
+    let index = 0;
+    const carousel = document.getElementById('carousel');
+
+    function moveSlide(direction) {
+      const slides = document.querySelectorAll('#carousel img');
+      index = (index + direction + slides.length) % slides.length;
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    }
+  </script>
+</body>
+
+</html>
